@@ -12,7 +12,39 @@
 <body> 
 	
   <div class="genesis">
+<div id="booked_seo_slider"></div>
+<script type="text/javascript">
+	fetch('https://booked.ishchuk/?page=seo_banner&banner_id=1')
+			.then(function(response) {
+				return response.text()
+			})
+			.then(function(html) {
+				var parser = new DOMParser();
+				var doc = parser.parseFromString(html, "text/html");
+				document.getElementById('booked_seo_slider').innerHTML = doc.body.innerHTML;
+				run();
+			})
+			.catch(function(err) {
+				console.log('Failed to fetch page: ', err);
+			});
 
+	function run() {
+		var widgetSrc = "https://booked.ishchuk/js/seo_banner.js";
+		widgetSrc += '?ref=' + widgetUrl;
+		var widgetSrcScript = document.createElement("script");
+		widgetSrcScript.setAttribute("type", "text/javascript");
+		widgetSrcScript.src = widgetSrc;
+		document.body.appendChild(widgetSrcScript)
+	}
+	
+</script>
+	  
+	  
+	  555555
+	
+	
+	
+	
 111111111222 
 
 	  <div id="booked_seo_slider"></div>
