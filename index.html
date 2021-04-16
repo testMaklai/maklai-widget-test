@@ -32,6 +32,14 @@ run();
 console.log('Failed to fetch page: ', err);
 });
 
+function run() {
+		var widgetSrc = "https://booked.ishchuk/js/seo_banner.js";
+			widgetSrc += '?ref=' + widgetUrl;
+			var widgetSrcScript = document.createElement("script");
+			widgetSrcScript.setAttribute("type", "text/javascript");
+			widgetSrcScript.src = widgetSrc;
+			document.body.appendChild(widgetSrcScript)
+}
     
 777777777777777
 <!-- clock widget start -->
